@@ -1,20 +1,25 @@
 package com.spartaglobal.JsonQuizChallange;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+
+public class AppTest
+
+
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void getEntireQuizJSONTester(){
+        QuizDTO quizDTO = new QuizDTO("resources/quiz.json");
+        QuizJSONReader quizJSONReader = new QuizJSONReader("resources/quiz.json");
+        Assert.assertEquals(quizJSONReader.getQuizJsonDetails().toString(), quizDTO.getEntireQuizJSON() );
+    }
+
+    @Test
+    public void checkIfThereIsARightAnswerInOptionsAndCorrectAnswerIsCorrectTest(){
+
     }
 }
